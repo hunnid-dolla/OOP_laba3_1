@@ -52,6 +52,7 @@
     <Compile Include="CirclesForm.Designer.cs">
       <DependentUpon>CirclesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CCircle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CirclesForm.resx">
