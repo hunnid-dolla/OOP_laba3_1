@@ -49,7 +49,7 @@
             this.panelCircleCoordinates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.panelCircleCoordinates.Location = new System.Drawing.Point(37, 92);
             this.panelCircleCoordinates.Name = "panelCircleCoordinates";
-            this.panelCircleCoordinates.Size = new System.Drawing.Size(167, 328);
+            this.panelCircleCoordinates.Size = new System.Drawing.Size(182, 328);
             this.panelCircleCoordinates.TabIndex = 1;
             // 
             // CirclesForm
