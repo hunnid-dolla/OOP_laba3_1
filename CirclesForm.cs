@@ -85,6 +85,183 @@ namespace OOP_laba3_1
             }
         }
 
+        //// Вариант 2: Выделяется только один круг (первый из пересекающихся)
+        //// Если в точке клика находится несколько кругов, выделяется только первый из них(по порядку добавления)
+        //private void CirclesForm_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        // Находим все круги, которые содержат точку клика
+        //        var clickedCircles = _container.GetAll()
+        //            .Where(circle => circle.Contains(e.Location))
+        //            .ToList();
+
+        //        if (clickedCircles.Any())
+        //        {
+        //            // Если Ctrl не нажат, снимаем выделение со всех кругов
+        //            if (!_isCtrlPressed)
+        //            {
+        //                _container.ClearSelection();
+        //            }
+
+        //            // Выделяем только первый круг из пересекающихся, если Ctrl не нажат
+        //            if (!_isCtrlPressed)
+        //            {
+        //                clickedCircles.First().IsSelected = true; // Выделяем первый круг
+        //            }
+        //            else
+        //            {
+        //                // Если Ctrl нажат, переключаем выделение для каждого круга из списка
+        //                foreach (var circle in clickedCircles)
+        //                {
+        //                    circle.IsSelected = !circle.IsSelected;
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // Если ни один круг не был выбран, создаем новый круг
+        //            _container.Add(new CCircle(e.Location));
+        //        }
+
+        //        // Обновляем панель с координатами кругов
+        //        UpdateCircleCoordinatesPanel();
+
+        //        // Перерисовываем форму
+        //        Invalidate();
+        //    }
+        //}
+
+        //// Вариант 3: Выделение только при удерживании Shift
+        //// Круги выделяются только при удерживании клавиши Shift.Без Shift выделение не происходит
+        //private void CirclesForm_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        // Находим все круги, которые содержат точку клика
+        //        var clickedCircles = _container.GetAll()
+        //            .Where(circle => circle.Contains(e.Location))
+        //            .ToList();
+
+        //        if (ModifierKeys == Keys.Shift && clickedCircles.Any())
+        //        {
+        //            // Если Ctrl не нажат, снимаем выделение со всех кругов
+        //            if (!_isCtrlPressed)
+        //            {
+        //                _container.ClearSelection();
+        //            }
+
+        //            // Выделяем все круги в точке клика
+        //            foreach (var circle in clickedCircles)
+        //            {
+        //                circle.IsSelected = true;
+        //            }
+        //        }
+        //        else if (!clickedCircles.Any())
+        //        {
+        //            // Если ни один круг не был выбран, создаем новый круг
+        //            _container.Add(new CCircle(e.Location));
+        //        }
+
+        //        // Обновляем панель с координатами кругов
+        //        UpdateCircleCoordinatesPanel();
+
+        //        // Перерисовываем форму
+        //        Invalidate();
+        //    }
+        //}
+
+        //// Вариант 4: Выделение только последнего созданного круга
+        //// Если в точке клика находится несколько кругов, выделяется только последний созданный круг
+        //private void CirclesForm_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        // Находим все круги, которые содержат точку клика
+        //        var clickedCircles = _container.GetAll()
+        //            .Where(circle => circle.Contains(e.Location))
+        //            .ToList();
+
+        //        if (clickedCircles.Any())
+        //        {
+        //            // Если Ctrl не нажат, снимаем выделение со всех кругов
+        //            if (!_isCtrlPressed)
+        //            {
+        //                _container.ClearSelection();
+        //            }
+
+        //            // Выделяем только первый круг из пересекающихся, если Ctrl не нажат
+        //            if (!_isCtrlPressed)
+        //            {
+        //                clickedCircles.Last().IsSelected = true; // Выделяем последний круг
+        //            }
+        //            else
+        //            {
+        //                // Если Ctrl нажат, переключаем выделение для каждого круга из списка
+        //                foreach (var circle in clickedCircles)
+        //                {
+        //                    circle.IsSelected = !circle.IsSelected;
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // Если ни один круг не был выбран, создаем новый круг
+        //            _container.Add(new CCircle(e.Location));
+        //        }
+
+        //        // Обновляем панель с координатами кругов
+        //        UpdateCircleCoordinatesPanel();
+
+        //        // Перерисовываем форму
+        //        Invalidate();
+        //    }
+        //}
+
+        //// Вариант 5: Добавление к выделению без снятия предыдущего
+        //// При клике на круг он добавляется к уже выделенным кругам (не снимается предыдущее выделение). Это работает как "добавление к выбору"
+        //private void CirclesForm_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        // Находим все круги, которые содержат точку клика
+        //        var clickedCircles = _container.GetAll()
+        //            .Where(circle => circle.Contains(e.Location))
+        //            .ToList();
+
+        //        if (clickedCircles.Any())
+        //        {
+        //            if (!_isCtrlPressed)
+        //            {
+        //                // Если Ctrl не нажат, добавляем все круги в точке клика к уже выделенным
+        //                foreach (var circle in clickedCircles)
+        //                {
+        //                    circle.IsSelected = true;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                // Если Ctrl нажат, переключаем выделение для каждого круга
+        //                foreach (var circle in clickedCircles)
+        //                {
+        //                    circle.IsSelected = !circle.IsSelected; // Переключаем выделение
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // Если ни один круг не был выбран, создаем новый круг
+        //            _container.Add(new CCircle(e.Location));
+        //        }
+
+        //        // Обновляем панель с координатами кругов
+        //        UpdateCircleCoordinatesPanel();
+
+        //        // Перерисовываем форму
+        //        Invalidate();
+        //    }
+        //}
+
         // Метод CirclesForm_MouseMove обновляет координаты мыши в реальном времени
         private void CirclesForm_MouseMove(object sender, MouseEventArgs e)
         {
