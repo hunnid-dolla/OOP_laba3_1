@@ -53,6 +53,7 @@
       <DependentUpon>CirclesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CCircle.cs" />
+    <Compile Include="CircleContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CirclesForm.resx">
